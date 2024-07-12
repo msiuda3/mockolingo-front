@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
+import React from 'react'
+import Dashboard from './Components/dashboard'
+import CourseDetail from './Components/CourseDetail';
+import ResultPage from './Components/ResultPage';
+import CreateCourse from './Components/CreateCourse';
+import History from './Components/History';
+import AdminView from './Components/AdminView';
+import EditCourse from './Components/EditCourse';
+import {BrowserRouter, Routes,Route } from "react-router-dom"
+const App = () => {
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1 className="text-3xl text-white font-bold">Mockolingo</h1>
+      <BrowserRouter> 
+      <Routes>
+        <Route path="/" element={<Dashboard/>} />
+        <Route path="/course/:id" element={<CourseDetail/>} />
+        <Route path="/result/:id" element={<ResultPage/>} />
+        <Route path="/edit/:id" element={<EditCourse/>} />
+        <Route path="/create" element={<CreateCourse/>} />
+        <Route path="/history" element={<History/>} />
+      </Routes>
+      </BrowserRouter>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

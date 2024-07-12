@@ -1,0 +1,14 @@
+GET http://localhost:8080/api/courses lista kursów dla danego usera
+GET http://localhost:8080/api/${id}/course/details kurs dla ID
+POST http://localhost:8080/api/courses/submit submit wypelnony kurs (zwraca wynik kursu)
+GET http://localhost:8080/api/courses/result/${id} wynik kursu
+GET http://localhost:8080/api/courses/result/${id} historia kursow
+
+
+
+GET rola
+
+ADMIN
+GET http://localhost:8080/api/courses/result/${id} lista wszystkich kursow
+GET http://localhost:8080/api/courses/result/${id} kurs do edycji
+POST http://localhost:8080/api/courses/result/${id} kurs do zapisu
